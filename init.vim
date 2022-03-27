@@ -4,7 +4,7 @@
 "| |  | | | |   | |\  | \ V /  | || |  | |  _ <| |___
 "|_|  |_| |_|   |_| \_|  \_/  |___|_|  |_|_| \_\\____|
 "
-" Author: @Polarkuma
+" Author: @Polor-Bear
 
 " Checkout-list
 " vim-esearch
@@ -15,7 +15,7 @@
 " ==== Header File ====
 " =====================
 let g:python_host_prog='/Python27/'
-let g:python3_host_prog='~/AppData/Local/Programs/Python/Python310/'
+let g:python3_host_prog='~/scoop/apps/python/3.10.3/'
 set encoding=utf-8
 let &t_ut=''
 
@@ -59,6 +59,13 @@ if has('persistent_undo')
 	set undodir=$HOME/.config/nvim/tmp/undo,.
 endif
 
+" ========================
+" ==== Basic Mappings ====
+" ========================
+" Set <LEADER> as <SPACE>, ; as :
+
+let mapleader="\<Space>"
+noremap <LEADER>; :
 
 " Smart search and highlight
 set hlsearch
@@ -71,17 +78,6 @@ noremap - Nzz
 noremap <LEADER><CR> :nohlsearch<CR>
 
 
-" ========================
-" ==== Basic Mappings ====
-" ========================
-" Set <LEADER> as <SPACE>, ; as :
-
-let mapleader="\<SPACE>"
-noremap ; :
-
-" Set <Escape> as jk
-inoremap jk <Esc>
-
 " set <Alt> + hjkl
 "inoremap <A-h> <Esc>ha
 "inoremap <A-j> <Esc>ja
@@ -93,11 +89,9 @@ inoremap jk <Esc>
 " Save & Quit
 noremap Q :q<CR>
 noremap <C-q> :q!<CR>
-noremap S :w<CR>
 noremap <C-s> :w<CR>
 
 " Source Vimrc
-noremap R :source ~/AppData/Local/nvim/init.vim<CR>
 noremap <C-r> :source ~/AppData/Local/nvim/init.vim<CR>
 
 " Open the vimrc file anytime
@@ -119,7 +113,7 @@ noremap J 5j
 noremap K 5k
 
 " H key: go to the start of the line
-noremap <silent> H 0
+noremap <silent> H ^
 " L key: go to the end of the line
 noremap <silent> L $
 
@@ -133,7 +127,6 @@ noremap <C-j> 5<C-e>
 
 " Alt + v to use VISUAL BLOCE
 noremap <A-v> <C-v>
-vnoremap v <Esc>
 
 " Adjacent duplicate words
 noremap <LEADER>fd /\(\<\w\+\>\)\_s*\1<CR>
@@ -244,7 +237,8 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 
 " highlight
 "Plug 'cateduo/vsdark.nvim'
-Plug 'theniceboy/nvim-deus'
+"Plug 'theniceboy/nvim-deus'
+Plug 'joshdick/onedark.vim'
 
 " If you want to have icons in your statusline choose one of these
 Plug 'nvim-lualine/lualine.nvim'
@@ -301,7 +295,8 @@ call plug#end()
 
 "set termguicolors
 "let g:vsdark_style = "dark"
-color deus
+"color deus
+color onedark
 
 "" ==== NERDTree ====
 "noremap tt :NERDTreeToggle<CR>
