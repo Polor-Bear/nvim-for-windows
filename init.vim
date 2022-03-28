@@ -85,6 +85,9 @@ noremap <LEADER><CR> :nohlsearch<CR>
 "inoremap <A-l> <Esc>la
 "inoremap <A-w> <Esc>wa
 "inoremap <A-b> <Esc>ba
+noremap <A-o> <A-o><Esc>
+noremap <A-O> <A-O><Esc>
+
 
 " Save & Quit
 noremap Q :q<CR>
